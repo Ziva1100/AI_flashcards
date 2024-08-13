@@ -6,7 +6,7 @@ import { initializeApp } from "firebase/app";
 // Your web app's Firebase configuration
 // For Firebase JS SDK v7.20.0 and later, measurementId is optional
 const firebaseConfig = {
-  apiKey: "AIzaSyAI03hEtej5J4_6eJbDqGtGLPiSrLrkqhk",
+  apiKey: FIREBASE_API_KEY,
   authDomain: "flashcards-ai-ecc51.firebaseapp.com",
   projectId: "flashcards-ai-ecc51",
   storageBucket: "flashcards-ai-ecc51.appspot.com",
