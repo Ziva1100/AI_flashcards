@@ -29,10 +29,10 @@ export default function Home() {
         >Falshcard SaaS</Typography>
         <SignedOut> 
           {/* when singed out see these buttons */}
-          <Button color='inherit'>
+          <Button color='inherit' href="sign-in">
             Log In
           </Button>
-          <Button color='inherit'>
+          <Button color='inherit' href="sign-up">
             Sign up
           </Button>
         </SignedOut>
@@ -74,39 +74,31 @@ export default function Home() {
       <Typography
       variant='h4'
      
+      fontFamily={'Segoe UI'}
       >Features</Typography>
       </Box>
-      <Stack direction='row' spacing={6} sx={{my:6}}>
-      
+      <Box sx={{my:6}}>
+      {/* create a container inside whiich there will be elements horizontal in big screen and vertical in small screen */}
+        <Grid container spacing={4}> 
         <Grid item xs = {12} md = {4}>
           <Box
           sx={{p:3,
-            border:'1px solid',
-            borderColor:'grey.300',
-            borderRadius:2,   boxShadow: 2,
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
+            flexDirection: 'column'
           }}>
-          <Typography variant='h6' >Easy Text Input</Typography>
+          <Typography variant='h6' gutterBottom>Easy Text Input</Typography>
           <Typography>Simply input your text and let our software do the rest.
             Creating flashcards has never been easier. </Typography>
             </Box>
        
       </Grid>
-       
         <Grid item xs = {12} md = {4}>
         <Box
           sx={{p:3,
-            border:'1px solid',
-            borderColor:'grey.300',
-            borderRadius:2,
-            boxShadow: 2,
             display: 'flex',
-            flexDirection: 'column',
-            alignItems: 'center'
+            flexDirection: 'column'
           }}>
-          <Typography variant='h6' >Automated Content Generator</Typography>
+          <Typography variant='h6' gutterBottom>Automated Content Generator</Typography>
           <Typography>AI algorithms can analyze text and 
             automatically generate flashcards based on key concepts, definitions, and important details. </Typography>
             </Box>
@@ -114,6 +106,49 @@ export default function Home() {
       </Grid>
         <Grid item xs = {12} md = {4}>
         <Box
+         sx={{p:3,
+          display: 'flex',
+          flexDirection: 'column'
+          }}>
+          <Typography variant='h6' gutterBottom>Customizable</Typography>
+          <Typography>Users can input specific topics or subjects, 
+            and the AI can generate flashcards tailored to those inputs. </Typography>
+            </Box>
+      
+      </Grid>
+      </Grid>
+      </Box>
+    
+    <Box> <Typography
+      variant='h4' display='flex' justifyContent='center' 
+      fontFamily={'Segoe UI'}>
+        Pricing
+      </Typography></Box>
+    <Box
+    sx={{my:6, textAlign:'cetner'}}
+    >
+     
+     <Grid container spacing={4}>
+        <Grid item xs = {12} md = {6}  >
+        <Box
+            sx={{p:3,
+              border:'1px solid',
+              borderColor:'grey.300',
+              borderRadius:2,
+              boxShadow: 2,
+              display: 'flex',
+              flexDirection: 'column',
+              alignItems: 'center'
+            }}
+          >
+          <Typography variant='h5' >Basic</Typography>
+          <Typography variant='h6' gutterBottom >$5 Per Month</Typography>
+          <Typography> Create up to 500 flashcards a month with basic AI generation. </Typography>
+          <Button variant="contained" sx={{mt:3}} >Choose Basic</Button>
+            </Box>
+        </Grid>
+        <Grid item xs = {12} md = {6}>
+        <Box
           sx={{p:3,
             border:'1px solid',
             borderColor:'grey.300',
@@ -122,85 +157,20 @@ export default function Home() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center'
-          }}>
-          <Typography variant='h6' >Customizable</Typography>
-          <Typography>Users can input specific topics or subjects, 
-            and the AI can generate flashcards tailored to those inputs. </Typography>
-            </Box>
-      
-      </Grid>
-      </Stack>
-    
-    <Box> <Typography
-      variant='h4' display='flex' justifyContent='center' >
-        Pricing
-      </Typography></Box>
-    <Stack
-    direction='row'
-    spacing={6}
-    sx={{my:6, textAlign:'cetner'}}
-    >
-     
-      {/* <Grid container spacing={2} > */}
-        <Grid item xs = {12} md = {4}  >
-        <Box
-            sx={{
-              backgroundColor: '#f5f5f5',
-              borderRadius: 2,
-              padding: 2,
-              boxShadow: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
             }}
           >
-          <Typography variant='h6' >Easy Text Input</Typography>
-          <Typography>Simply input your text and let our software do the rest.
-            Creating flashcards has never been easier. </Typography>
+          <Typography variant='h5' >Pro</Typography>
+          <Typography variant='h6' gutterBottom>$10 Per Month</Typography>
+          <Typography> Unlimited flashcard creation, customizable flashcard
+            creation options, sync accross multiple devices.
+          </Typography>
+          <Button variant="contained" sx={{mt:3}} >Choose Pro</Button>
             </Box>
         </Grid>
-      {/* </Grid> */}
-      {/* <Grid container spacing={6} > */}
-        <Grid item xs = {12} md = {4}>
-        <Box
-            sx={{
-              backgroundColor: '#f5f5f5',
-              borderRadius: 2,
-              padding: 2,
-              boxShadow: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-          <Typography variant='h6' >Automated Content Generator</Typography>
-          <Typography>AI algorithms can analyze text and 
-            automatically generate flashcards based on key concepts, definitions, and important details. </Typography>
-            </Box>
+        
         </Grid>
-        {/* </Grid> */}
       
-        {/* <Grid container spacing={6} > */}
-        <Grid item xs = {12} md = {4}>
-        <Box
-            sx={{
-              backgroundColor: '#f5f5f5',
-              borderRadius: 2,
-              padding: 2,
-              boxShadow: 2,
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-            }}
-          >
-          <Typography variant='h6' >Customizable</Typography>
-          <Typography>Users can input specific topics or subjects, 
-            and the AI can generate flashcards tailored to those inputs. </Typography>
-            </Box>
-        </Grid>
-        {/* </Grid> */}
-      
-    </Stack>
+      </Box>
     
    </Container>
   );
