@@ -2,6 +2,8 @@
 import {useUser} from '@clerk/nextjs'
 import {useState} from 'react'
 import{useRouter} from 'next/navigation'
+import {db} from '@/firebase'
+import {collection} from 'firebase/firestore'
 
 
 export default function Generate(){
@@ -20,5 +22,34 @@ export default function Generate(){
         )
         .then((res)=>res.json())
         .then(data > setFlashcards(data))
+    }
+
+    const handleCardClick = (id) =>{
+        setFlipped((prev) => ({
+            ...prev, 
+            [id]: !prev[id],
+        })
+    )}
+
+    const handeOpen = () => {
+        setOpen(true)
+
+    }
+    const handeClose = () => {
+        setOpen(false)
+        
+    }
+
+    const saveFlashcards = async () => {
+        if (!name) {
+            alert('Please enter a name') 
+            return 
+        }
+
+        const batch = writeBatch(db)
+        const userDocRef = doc(collection(db, 'users'), user.id)
+        const docSnap = await getDoc(userDocRef)
+
+        
     }
 }
