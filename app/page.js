@@ -1,6 +1,6 @@
 import Image from "next/image";
 import {Box,AppBar, Toolbar, Typography, Container, Button, Stack, Grid} from "@mui/material"
-import {getStripe} from "@/utils/get-stripe"
+// import {getStripe} from "@/utils/get-stripe.js"
 import { SignedIn, SignedOut, UserButton } from "@clerk/nextjs"
 import Head from 'next/head'
 

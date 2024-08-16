@@ -47,7 +47,7 @@ Back: False. Photosynthesis converts carbon dioxide and water into glucose and o
 Additional Considerations:
 Customization: Allow for customization of the flashcards' difficulty level by adjusting the complexity of the questions.
 Variations: Generate different types of questions (e.g., multiple-choice, true/false, etc.) to increase engagement.
-
+Quantity: Only generate 10 flashcards.
 Return in the following JSON format
 {
     "flashcards": [{
@@ -57,7 +57,7 @@ Return in the following JSON format
 `
 
 export async function POST(req){
-    const openai=OpenAI({
+    const openai=new OpenAI({
         
       baseURL: "https://openrouter.ai/api/v1",
       apiKey: process.env.OPENAI_API_KEY
@@ -72,7 +72,7 @@ export async function POST(req){
      model:  "meta-llama/llama-3.1-8b-instruct:free"  ,
      response_format : {type: "json_object"}
 })
-
+console.log(completion.choices[0].messages.content)
 const flashcards = JSON.parse(completion.choices[0].messages.content)
 
 return NextResponse.json(flashcards.flashcard)
