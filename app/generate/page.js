@@ -88,7 +88,7 @@ return(
                  rows={4} 
                  variant= 'outlined'
                  sx={{mb:2}} />
-                 <Button variant='contained' onCLick={handleSubmit}
+                 <Button variant='contained' onClick={handleSubmit}
                  fullWidth>
                     Submit
                  </Button>
